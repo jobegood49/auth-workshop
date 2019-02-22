@@ -40,6 +40,21 @@ app.get('/users', async (req, res) => {
   })
 })
 
+app.post('/register', async (req, res) => {
+  console.log('create a new user')
+  res.send({
+    message: 'register',
+  })
+})
+
+app.post('/login', async (req, res) => {
+  console.log('login')
+})
+
+app.post('/profile', async (req, res) => {
+  console.log('profile')
+})
+
 app.listen(port, () => {
   console.log(`Listening on port ${port} `)
 })
