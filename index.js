@@ -4,11 +4,13 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 8000
 
+require('dotenv').config()
+
 //Import the mongoose module
 var mongoose = require('mongoose')
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb://localhost:27017/mytasks'
+var mongoDB = process.env.DB_PATH
 mongoose.connect(mongoDB, { useNewUrlParser: true })
 // Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise
